@@ -1,9 +1,8 @@
 <template>
     <div class="form">
-        <p>{{userinput}}</p>
+        <p>Det här är new card</p>
     </div>
 </template>
-
 
 
 <script>

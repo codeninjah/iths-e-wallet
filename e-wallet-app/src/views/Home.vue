@@ -3,16 +3,19 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <Card cardNumber="234555">{{cardNumber}}</Card>
-    <Cardform />
+    <card-component
+      cardNumber="234555"
+      cardHolder="Alex"
+      month="10"
+      year="2023" />
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import Card from '@/components/Card.vue'
-import Cardform from '@/components/Cardform.vue'
+//import HelloWorld from '@/components/HelloWorld.vue'
+import CardComponent from '@/components/CardComponent.vue'
 
 export default {
 
@@ -22,9 +25,8 @@ export default {
     }
   },
   components: {
-    HelloWorld,
-    Card,
-    Cardform
+    //HelloWorld,
+    CardComponent,
   }
 }
 </script>
