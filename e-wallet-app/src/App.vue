@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/new-card">Add new card</router-link>
+      <router-link to="/test">Test vyn</router-link>
     </div>
     <router-view/>
   </div>
