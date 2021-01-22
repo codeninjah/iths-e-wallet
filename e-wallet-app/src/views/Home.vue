@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <Card />
+    <Card cardNumber="234555">{{cardNumber}}</Card>
     <Cardform />
   </div>
 </template>
