@@ -56,7 +56,9 @@
             <input type="submit" id="submit" value="ADD CARD">
             <br />
             <br />
+            <router-link to="/">
             <input type="button" id="home" value="BACK TO CARDS">
+            </router-link>
         </form>
     </div>
 </template>
