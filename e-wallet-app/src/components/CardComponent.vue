@@ -1,4 +1,4 @@
-<!--
+
 
 <template>
     <div class="card-body">
@@ -12,7 +12,8 @@
     </div>
 </template>
 
--->
+
+<!--
 <template>
     <div class="card-body">
         <div class="vendor"><img src="../assets/vendor-evil.svg"></div>
@@ -20,27 +21,25 @@
         <div class="card-number">{{NewCard.CardNumber}}</div>
         <div class="name-date">
             <div class="card-holder">{{NewCard.CardHolder}}</div>
-            <!--
-            <div class="expire">{{month}} / {{year}}</div>
-            -->
             <NewCard />
         </div>
     </div>
 </template>
+-->
 
 
 
 <script>
 
-import NewCard from '../views/NewCard.vue'
+//import NewCard from '../views/NewCard.vue'
 
 
 export default {
-    //props: ['cardHolder', 'cardNumber', 'year', 'month', 'logo', 'chip'],
+    props: ['cardHolder', 'cardNumber', 'year', 'month', 'logo', 'chip'],
 
-    components: {
+    /*components: {
         NewCard,
-    }
+    }*/
 }
 </script>
 

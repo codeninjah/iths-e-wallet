@@ -8,16 +8,13 @@
       month="10"
       year="2023" />
 
-      <card-component
-        cardNumber = NewCard.CardNumber
-        />
 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-//import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 import CardComponent from '@/components/CardComponent.vue'
 
 export default {
@@ -28,7 +25,7 @@ export default {
     }
   },
   components: {
-    //HelloWorld,
+    HelloWorld,
     CardComponent,
 
   }

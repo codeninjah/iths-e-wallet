@@ -56,7 +56,7 @@
             <input type="submit" id="submit" value="ADD CARD">
             <br />
             <br />
-            <input type="button" id="home" value="BACK TO CARDS">
+            <router-link to="/"><input type="button" id="home" value="BACK TO CARDS"></router-link>
         </form>
     </div>
 </template>
@@ -69,9 +69,9 @@ export default {
             //userinput: "Alex",
         }
     },
-    props: ["CardNumber",
+    /*props: ["CardNumber",
             "CardHolder", 
-            ]
+            ]*/
 }
 </script>
 
