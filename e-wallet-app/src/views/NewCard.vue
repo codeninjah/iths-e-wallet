@@ -1,20 +1,20 @@
 <template>
     <div class="form">
-        <form>
+        <form @submit.prevent>
             <label for="card-nr">CARD NUMBER</label>
             <br />
-            <input type="text" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX">
+            <input type="text" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX" v-model="cardNr"> 
             <br />
             <br />
             <label for="name">CARDHOLDER NAME</label>
             <br />
-            <input type="text" id="name" placeholder="Firstname Lastname">
+            <input type="text" id="name" placeholder="Firstname Lastname" v-model="cardName">
             <br />
             <br />
             <label for="month" id="month-label">MONTH</label>
             <label for="year" id="year-label">YEAR</label>
             <br />
-            <select id="month">
+            <select id="month" v-model="month">
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
@@ -28,7 +28,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
             </select>
-            <select id="year">
+            <select id="year" v-model="year">
                 <option value="20">20</option>
                 <option value="21">21</option>
                 <option value="22">22</option>
@@ -42,7 +42,7 @@
             <label for="vendor">VENDOR</label>
             <br />
 
-            <select id="vendor">
+            <select id="vendor" v-model="vendor">
                 <option value="Bitcoin">Bitcoin Inc</option>
                 <option value="Blockchain">Blockchainn Inc</option>
                 <option value="EvilCorp">Evil Corp</option>
@@ -53,7 +53,7 @@
             <br />
             <br />
             <br />
-            <input type="submit" id="submit" value="ADD CARD">
+            <button id="addCard" v-on:click="addCard()">ADD CARD</button>
             <br />
             <br />
             <router-link to="/">
@@ -68,10 +68,44 @@
 export default {
     data(){
         return {
-            userinput: "Alex",
+            //userinput: "Alex",
+            cardNr: "",
+            cardName: "",
+            month: "",
+            year: "",
+            vendor: "",
+        }
+    },
+    methods: {
+        addCard(){
+            /*
+            console.log(this.cardNr)
+            console.log(this.cardName)
+            console.log(this.month)
+            console.log(this.year)
+            */
+
+            
+            //console.log(this.vendor)
+            this.$root.cardArray.push(
+                {cardNr: this.cardNr,
+                cardName: this.cardName, 
+                month: this.month,
+                year: this.year,
+                vendor: this.vendor}
+            )
+
+            //this.$root.cardArray.push(this.vendor)
+
+            //$this.root hämtar data från main
+            console.log(this.$root.cardArray)
+
         }
     }
 }
+
+
+
 </script>
 
 
@@ -102,7 +136,7 @@ export default {
         padding-left: 15px;
     }
 
-    #submit {
+    #addCard {
         width: 380px;
         height: 50px;
         font-size: 32px;
@@ -152,7 +186,7 @@ export default {
         background-color: white;
     }
 
-    #submit:hover {
+    #addCard:hover {
         background-color: grey;
         cursor: pointer;
     }

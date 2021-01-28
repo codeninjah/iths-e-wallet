@@ -8,6 +8,20 @@
       month="10"
       year="2023" />
 
+      <ol>
+        <li> 
+
+      <card-component  v-for="card in cards"
+        :key="card"
+
+        :cardNumber = "card.cardNr"
+        :cardHolder = "card.cardName"
+        :month = "card.month"
+        :year = "card.year" />
+        
+        </li>
+      </ol>
+
 
   </div>
 </template>
@@ -22,6 +36,7 @@ export default {
   data() {
     return{
       name: 'Home',
+      cards: this.$root.cardArray
     }
   },
   components: {
