@@ -8,6 +8,10 @@
       month="10"
       year="2023" />
 
+      <card-component
+        cardNumber = NewCard.CardNumber
+        />
+
   </div>
 </template>
 
@@ -26,6 +30,7 @@ export default {
   components: {
     //HelloWorld,
     CardComponent,
+
   }
 }
 </script>

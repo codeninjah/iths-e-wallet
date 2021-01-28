@@ -3,12 +3,12 @@
         <form>
             <label for="card-nr">CARD NUMBER</label>
             <br />
-            <input type="text" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX">
+            <input type="text" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX"> {{CardNumber}}
             <br />
             <br />
             <label for="name">CARDHOLDER NAME</label>
             <br />
-            <input type="text" id="name" placeholder="Firstname Lastname">
+            <input type="text" id="name" placeholder="Firstname Lastname"> {{CardHolder}}
             <br />
             <br />
             <label for="month" id="month-label">MONTH</label>
@@ -66,9 +66,12 @@
 export default {
     data(){
         return {
-            userinput: "Alex",
+            //userinput: "Alex",
         }
-    }
+    },
+    props: ["CardNumber",
+            "CardHolder", 
+            ]
 }
 </script>
 
