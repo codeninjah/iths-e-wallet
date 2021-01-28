@@ -13,11 +13,12 @@
 
       <card-component  v-for="card in cards"
         :key="card"
-
+        :vendor = "card.vendor"
         :cardNumber = "card.cardNr"
         :cardHolder = "card.cardName"
         :month = "card.month"
-        :year = "card.year" />
+        :year = "card.year" 
+        />
         
         </li>
       </ol>

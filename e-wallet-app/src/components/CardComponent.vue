@@ -2,13 +2,25 @@
 
 <template>
     <div class="card-body">
-        <div class="vendor"><img src="../assets/vendor-evil.svg"></div>
+        <div>
+            <img v-if="vendor == EvilCorp" src="../assets/vendor-evil.svg">
+            <img v-else-if="vendor == Bitcoin" src="../assets/vendor-bitcoin.svg">
+        </div>
+        <!--
+        <div v-else-if="vendor == Blockchain"  class="vendor">
+            <img src="../assets/vendor-blockchain.svg">
+        </div>
+        <div v-else-if="vendor == NinjaBank"  class="vendor">
+            <img src="../assets/vendor-ninja.svg">
+        </div>
+        -->
         <div class="chip"><img src="../assets/chip-dark.svg"></div>
         <div class="card-number">{{cardNumber}}</div>
         <div class="name-date">
             <div class="card-holder">{{cardHolder}}</div>
             <div class="expire">{{month}} / {{year}}</div>
         </div>
+        <div class="vendor">{{vendor}}</div>
     </div>
 </template>
 
@@ -35,7 +47,7 @@
 
 
 export default {
-    props: ['cardHolder', 'cardNumber', 'year', 'month', 'logo', 'chip'],
+    props: ['cardHolder', 'cardNumber', 'year', 'month', 'logo', 'chip', 'vendor'],
 
     /*components: {
         NewCard,
@@ -58,6 +70,22 @@ export default {
     .vendor {
         justify-content: flex-end;
         align-items: flex-start;
+    }
+
+    .evil {
+        background-color: red;
+    }
+
+    .blockchain {
+        background-color: purple;
+    }
+
+    .bitcoin {
+        background-color: orange;
+    }
+
+    .ninja {
+        background-color: black;
     }
 
 </style>
