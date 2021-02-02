@@ -98,7 +98,7 @@ export default {
             //this.$root.cardArray.push(this.vendor)
 
             //$this.root hämtar data från main
-            console.log(this.$root.cardArray)
+            //console.log(this.$root.cardArray)
 
         }
     }

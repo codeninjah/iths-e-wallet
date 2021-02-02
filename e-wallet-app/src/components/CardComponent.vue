@@ -3,8 +3,8 @@
 <template>
     <div class="card-body">
         <div>
-            <img v-if="vendor == EvilCorp" src="../assets/vendor-evil.svg">
-            <img v-else-if="vendor == Bitcoin" src="../assets/vendor-bitcoin.svg">
+            <p v-if="vendor == EvilCorp"><img src="../assets/vendor-evil.svg"></p>
+            <p v-else-if="vendor == Bitcoin"><img src="../assets/vendor-bitcoin.svg"></p>
         </div>
         <!--
         <div v-else-if="vendor == Blockchain"  class="vendor">
