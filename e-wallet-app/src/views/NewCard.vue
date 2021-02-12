@@ -78,13 +78,6 @@ export default {
     },
     methods: {
         addCard(){
-            /*
-            console.log(this.cardNr)
-            console.log(this.cardName)
-            console.log(this.month)
-            console.log(this.year)
-            */
-
             
             //console.log(this.vendor)
             this.$root.cardArray.push(

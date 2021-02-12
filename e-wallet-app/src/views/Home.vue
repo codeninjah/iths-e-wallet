@@ -3,21 +3,20 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
     <card-component
+      vendor="EvilCorp"
       cardNumber="234555"
       cardHolder="Alex"
       month="10"
       year="2023" />
 
       <ol>
-        <li> 
-
-      <card-component  v-for="card in cards"
+        <li> {{active}} </li>
+        
+      <li>
+      <card-component v-for="(card, index) in cards"
         :key="card"
-        :vendor = "card.vendor"
-        :cardNumber = "card.cardNr"
-        :cardHolder = "card.cardName"
-        :month = "card.month"
-        :year = "card.year" 
+        :index = index
+        :card = "card"        
         />
         
         </li>
@@ -37,14 +36,18 @@ export default {
   data() {
     return{
       name: 'Home',
-      cards: this.$root.cardArray
+      cards: this.$root.cardArray,
+      active: this.$root.activeCard
     }
   },
   components: {
     //HelloWorld,
     CardComponent,
 
-  }
+  },
+  methods: {
+
+    }
 }
 </script>
 

@@ -9,6 +9,8 @@ new Vue({
     return{
       //var: "Hello World",
       cardArray: [],
+
+      activeCard: {},
       
     }
   },

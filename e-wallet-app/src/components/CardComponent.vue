@@ -1,64 +1,70 @@
-
-
 <template>
-    <div class="card-body">
+<div>
+    <div class="card-body" 
+        v-bind:class="card.vendor" 
+        v-on:click="$emit(testar(index))">
         <div>
-            <p v-if="vendor == EvilCorp"><img src="../assets/vendor-evil.svg"></p>
-            <p v-else-if="vendor == Bitcoin"><img src="../assets/vendor-bitcoin.svg"></p>
+            <p v-if="card.vendor == 'EvilCorp'"><img src="../assets/vendor-evil.svg"></p>
+            <p v-else-if="card.vendor == 'Bitcoin'"><img src="../assets/vendor-bitcoin.svg"></p>
+            <p v-else-if="card.vendor == 'NinjaBank'"><img src="../assets/vendor-ninja.svg"></p>
+            <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
         </div>
-        <!--
-        <div v-else-if="vendor == Blockchain"  class="vendor">
-            <img src="../assets/vendor-blockchain.svg">
-        </div>
-        <div v-else-if="vendor == NinjaBank"  class="vendor">
-            <img src="../assets/vendor-ninja.svg">
-        </div>
-        -->
+
         <div class="chip"><img src="../assets/chip-dark.svg"></div>
-        <div class="card-number">{{cardNumber}}</div>
+        <div class="card-number">{{card.cardNumber}}</div>
         <div class="name-date">
-            <div class="card-holder">{{cardHolder}}</div>
-            <div class="expire">{{month}} / {{year}}</div>
+            <div class="card-holder">{{card.cardName}}</div>
+            <div class="expire">{{card.month}} / {{card.year}}</div>
         </div>
-        <div class="vendor">{{vendor}}</div>
+        <div class="vendor">{{card.vendor}}</div>
     </div>
+</div>
 </template>
-
-
-<!--
-<template>
-    <div class="card-body">
-        <div class="vendor"><img src="../assets/vendor-evil.svg"></div>
-        <div class="chip"><img src="../assets/chip-dark.svg"></div>
-        <div class="card-number">{{NewCard.CardNumber}}</div>
-        <div class="name-date">
-            <div class="card-holder">{{NewCard.CardHolder}}</div>
-            <NewCard />
-        </div>
-    </div>
-</template>
--->
-
 
 
 <script>
-
 //import NewCard from '../views/NewCard.vue'
 
-
 export default {
-    props: ['cardHolder', 'cardNumber', 'year', 'month', 'logo', 'chip', 'vendor'],
+    data() { return {
+        //vendor: "blue"
+    }},
+    props: ['card', 'index'],
+    methods: {
 
-    /*components: {
-        NewCard,
-    }*/
+        //HADE TÄNKT BYGGA PÅ FÖR ATT SWISHA KORT VID KNAPPTRYCK PÅ RESP. KORT
+        testar(index){
+            console.log("ALEX")
+            console.log(index)
+
+            //CHANGES BG COLOR ON FIRST IN ARRAY [0]
+            const x = document.getElementsByClassName("card-body")[index]
+            x.style.backgroundColor = "orange"
+            console.log("Bitcoin")
+
+            //Här måste jag tänka till
+            this.$root.activeCard = this.$root.cardArray[index]
+            //console.log(index)
+            console.log(this.$root.activeCard)
+        },
+
+    }
+
 }
 </script>
 
 
 <style scoped>
     .card-body {
-        background-color: red;
+        width: 670px;
+        line-height: 3;
+        color: white;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .active-card {
         width: 670px;
         line-height: 3;
         color: white;
@@ -72,21 +78,20 @@ export default {
         align-items: flex-start;
     }
 
-    .evil {
-        background-color: red;
+    .EvilCorp {
+        background-color: red !important;
     }
 
-    .blockchain {
-        background-color: purple;
+    .Blockchain {
+        background-color: purple !important;
     }
 
-    .bitcoin {
-        background-color: orange;
+    .Bitcoin {
+        background-color: orange !important;
     }
 
-    .ninja {
-        background-color: black;
+    .NinjaBank {
+        background-color: black !important;
     }
-
 </style>
 
