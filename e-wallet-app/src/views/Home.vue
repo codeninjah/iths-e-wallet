@@ -17,10 +17,10 @@
         </li>
         
       <li>
-      <card-component v-for="(card, index) in cards"
+      <card-component v-for="(card, index) in Cards"
         :key="card"
         :index = index
-        :card = "cards[index]" 
+        :card = "Cards[index]" 
         @actived="actived(index)"       
         />
         
@@ -41,7 +41,8 @@ export default {
   data() {
     return{
       name: 'Home',
-      cards: this.$root.cardArray,
+      //byt från c till C
+      Cards: this.$root.cardArray,
       active: this.$root.activeCard
     }
   },
@@ -60,9 +61,11 @@ export default {
     },
 
   computed: {
+    /*
       Cards(){
         return this.$root.cardArray
       }
+      */
   }
 }
 </script>
