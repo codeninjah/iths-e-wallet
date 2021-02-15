@@ -2,7 +2,7 @@
 <div>
     <div class="card-body" 
         v-bind:class="card.vendor" 
-        v-on:click="$emit(testar(index))">
+        v-on:click="$emit('actived')">
         <div class="first-row">
             <p v-if="card.vendor == 'EvilCorp'"><img src="../assets/vendor-evil.svg"></p>
             <p v-else-if="card.vendor == 'Bitcoin'"><img src="../assets/vendor-bitcoin.svg"></p>

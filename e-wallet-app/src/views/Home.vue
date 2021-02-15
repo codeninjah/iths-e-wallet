@@ -10,13 +10,18 @@
       year="2023" />
 
       <ol>
-        <li> {{active}} </li>
+        <li> {{actived}} </li>
+
+        <li>
+          <card-component :card="Cards[this.index]" />
+        </li>
         
       <li>
       <card-component v-for="(card, index) in cards"
         :key="card"
         :index = index
-        :card = "card"        
+        :card = "cards[index]" 
+        @actived="actived(index)"       
         />
         
         </li>
@@ -46,8 +51,19 @@ export default {
 
   },
   methods: {
+    
+      actived(index){
+        this.position = index;
+        console.log(this.position)
+      }
+      
+    },
 
-    }
+  computed: {
+      Cards(){
+        return this.$root.cardArray
+      }
+  }
 }
 </script>
 
