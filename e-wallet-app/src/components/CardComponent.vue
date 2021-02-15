@@ -8,7 +8,7 @@
             <p v-else-if="card.vendor == 'Bitcoin'"><img src="../assets/vendor-bitcoin.svg"></p>
             <p v-else-if="card.vendor == 'NinjaBank'"><img src="../assets/vendor-ninja.svg"></p>
             <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
-            <div class="chip"><img src="../assets/chip-dark.svg"></div>
+            <img src="../assets/chip-dark.svg">
         </div>
  
 
@@ -64,9 +64,10 @@ export default {
         color: white;
         padding: 25px;
         min-height: 300px;
-        max-height: 300px;
+        max-height: 300px;        
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+
     }
 
     .active-card {
@@ -75,13 +76,15 @@ export default {
         color: white;
         padding: 25px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
+    /*
     .vendor {
         justify-content: flex-end;
         align-items: flex-start;
     }
+    */
 
     .EvilCorp {
         background-color: red !important;
@@ -113,7 +116,8 @@ export default {
     }
 
     .first-row {
-        justify-direction: row;
+        flex-direction: row;
+ 
     }
 
 </style>
