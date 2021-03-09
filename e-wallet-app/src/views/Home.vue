@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    
       <ol>
-        <li> {{actived}} </li>
+
+        <li> {{cardNr}} </li>
         
       <li>
       <card-component v-for="(card, index) in Cards"
@@ -11,8 +11,8 @@
         :card = "Cards[index]" 
         @actived="actived(index)"       
         />
-        
         </li>
+        
       </ol>
 
 
@@ -31,7 +31,7 @@ export default {
       name: 'Home',
       //byt från c till C
       Cards: this.$root.cardArray,
-      active: this.$root.activeCard
+      //active: this.$root.activeCard
     }
   },
   components: {
@@ -41,17 +41,14 @@ export default {
       actived(index){
         this.position = index;
         console.log(this.position)
+        return this.position
       }
       
     },
 
   computed: {
-    /*
-      Cards(){
-        return this.$root.cardArray
-      }
-      */
   }
+
 }
 </script>
 

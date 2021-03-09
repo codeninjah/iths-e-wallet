@@ -90,7 +90,6 @@ export default {
 
     methods: {
         addCard(){       
-            //console.log(this.vendor)
             this.$root.cardArray.push(
                 {cardNr: this.cardNr,
                 cardName: this.cardName, 
@@ -98,12 +97,11 @@ export default {
                 year: this.year,
                 vendor: this.vendor})
             
-            this.cardNr = ''
-            this.cardName = ''
-            this.month = ''
-            this.year = ''
-            this.vendor = ''
-            
+                this.cardNr = ''
+                this.cardName = ''
+                this.month = ''
+                this.year = ''
+                this.vendor = ''
             },
 
             //this.$root.cardArray.push(this.vendor)
