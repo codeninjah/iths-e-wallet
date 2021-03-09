@@ -1,4 +1,14 @@
 <template>
+    <div class="wrapper">
+        <div class="live-card">
+
+            <p>{{ cardNr }}</p>
+            <p>{{ cardName }}</p>
+            <p>{{ month }}</p>
+            <p>{{ year }}</p>
+            <p>{{ vendor }}</p>
+        
+        </div>
     <div class="form">
         <form @submit.prevent>
             <label for="card-nr">CARD NUMBER</label>
@@ -61,6 +71,7 @@
             </router-link>
         </form>
     </div>
+    </div>
 </template>
 
 
@@ -76,24 +87,29 @@ export default {
             vendor: "",
         }
     },
+
     methods: {
-        addCard(){
-            
+        addCard(){       
             //console.log(this.vendor)
             this.$root.cardArray.push(
                 {cardNr: this.cardNr,
                 cardName: this.cardName, 
                 month: this.month,
                 year: this.year,
-                vendor: this.vendor}
-            )
+                vendor: this.vendor})
+            
+            this.cardNr = ''
+            this.cardName = ''
+            this.month = ''
+            this.year = ''
+            this.vendor = ''
+            
+            },
 
             //this.$root.cardArray.push(this.vendor)
 
             //$this.root hämtar data från main
             //console.log(this.$root.cardArray)
-
-        }
     }
 }
 

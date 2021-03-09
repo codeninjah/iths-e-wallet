@@ -1,20 +1,8 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-
-    <card-component
-      vendor="EvilCorp"
-      cardNumber="234555"
-      cardHolder="Alex"
-      month="10"
-      year="2023" />
-
+    
       <ol>
         <li> {{actived}} </li>
-
-        <li>
-          <card-component :card="Cards[this.index]" />
-        </li>
         
       <li>
       <card-component v-for="(card, index) in Cards"
@@ -47,12 +35,9 @@ export default {
     }
   },
   components: {
-    //HelloWorld,
     CardComponent,
-
   },
   methods: {
-    
       actived(index){
         this.position = index;
         console.log(this.position)
