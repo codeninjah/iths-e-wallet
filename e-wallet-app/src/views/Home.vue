@@ -2,7 +2,7 @@
   <div class="home">
       <ol>
 
-        <li> {{cardNr}} </li>
+        <li> {{actived}} </li>
         
       <li>
       <card-component v-for="(card, index) in Cards"
@@ -12,7 +12,7 @@
         @actived="actived(index)"       
         />
         </li>
-        
+
       </ol>
 
 
@@ -31,7 +31,7 @@ export default {
       name: 'Home',
       //byt från c till C
       Cards: this.$root.cardArray,
-      //active: this.$root.activeCard
+      //chosenCard: 0,
     }
   },
   components: {
