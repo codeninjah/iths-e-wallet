@@ -2,7 +2,7 @@
   <div class="home">
       <ol>
 
-        <li> </li>
+        <li> {{testCard}}</li>
         
       <li>
       <card-component v-for="(card, index) in Cards"
@@ -41,12 +41,16 @@ export default {
       actived(index){
         this.position = index;
         console.log(this.position)
-        return this.position
+        return this.Cards[this.position]
       }
       
     },
 
   computed: {
+    testCard(){
+      console.log(this.Cards[this.position]) //undefined
+      return this.Cards[this.position]
+    }
   }
 
 }
