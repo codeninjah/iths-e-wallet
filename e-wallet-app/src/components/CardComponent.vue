@@ -41,7 +41,7 @@ export default {
             console.log(index)
 
             //CHANGES BG COLOR ON FIRST IN ARRAY [0]
-            const x = document.getElementsByClassName("card-body")[index]
+            const x = document.getElementsByClassName("card-body")[this.index]
             x.style.backgroundColor = "orange"
             console.log("Bitcoin")
 

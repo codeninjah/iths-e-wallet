@@ -105,7 +105,6 @@ export default {
             },
 
             //this.$root.cardArray.push(this.vendor)
-
             //$this.root hämtar data från main
             //console.log(this.$root.cardArray)
     }
@@ -118,6 +117,11 @@ export default {
 
 
 <style scoped>
+
+    .live-card {
+        min-height: 300px;
+        max-height: 300px; 
+    }
 
     form {
         margin-left: 300px;

@@ -2,7 +2,7 @@
   <div class="home">
       <ol>
 
-        <li> {{actived}} </li>
+        <li> </li>
         
       <li>
       <card-component v-for="(card, index) in Cards"
