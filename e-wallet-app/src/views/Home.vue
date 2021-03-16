@@ -53,6 +53,11 @@ export default {
 
 
 <style scoped>
+  .home {
+       margin: auto;
+       width: 700px;
+  }
+
   ul {
     list-style-type: none;
   }

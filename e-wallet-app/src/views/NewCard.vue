@@ -118,15 +118,18 @@ export default {
 
 <style scoped>
 
+
     .live-card {
         min-height: 300px;
         max-height: 300px; 
+        margin: auto;
     }
 
     form {
         margin-left: 300px;
         text-align: left;
         width: 380px;
+        margin: auto;
     }
 
     #card-nr {
