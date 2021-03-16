@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-      <ol>
+      <ul>
 
-        <li> <card-component v-bind:card="cards[this.position]" /> </li>
+        <li class="active"> <card-component v-bind:card="cards[this.position]" /> </li>
 
       <li>
       <card-component
@@ -13,7 +13,7 @@
         />
         </li>
 
-      </ol>
+      </ul>
 
   </div>
 </template>
@@ -28,9 +28,7 @@ export default {
   data() {
     return{
       name: 'Home',
-      //byt från c till C
-      //Cards: this.$root.cardArray,
-      position: 0,
+      position: null,
     }
   },
   components: {
@@ -39,8 +37,6 @@ export default {
   methods: {
       active(index){
         this.position = index;
-        //console.log(this.position)
-        //return this.Cards[this.position]
       }
       
     },
@@ -56,6 +52,13 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+  ul {
+    list-style-type: none;
+  }
 
+  .active {
+    min-height: 300px;
+    max-height: 300px;
+  }
 </style>

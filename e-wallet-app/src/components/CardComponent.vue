@@ -33,6 +33,8 @@ export default {
         //vendor: "blue"
     }},
     props: ['card', 'index'],
+    
+    /*
     methods: {
 
         //HADE TÄNKT BYGGA PÅ FÖR ATT SWISHA KORT VID KNAPPTRYCK PÅ RESP. KORT
@@ -52,6 +54,7 @@ export default {
         },
 
     }
+    */
 
 }
 </script>
@@ -117,7 +120,6 @@ export default {
 
     .first-row {
         flex-direction: row;
- 
     }
 
 </style>
