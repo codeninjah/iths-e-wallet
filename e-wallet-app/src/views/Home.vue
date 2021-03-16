@@ -2,19 +2,18 @@
   <div class="home">
       <ol>
 
-        <li> {{testCard}}</li>
-        
+        <li> <card-component v-bind:card="cards[this.position]" /> </li>
+
       <li>
-      <card-component v-for="(card, index) in Cards"
-        :key="card"
-        :index = index
-        :card = "Cards[index]" 
-        @actived="actived(index)"       
+      <card-component
+        v-for="(card, index) in cards"
+        :key="index"
+        :card = "cards[index]" 
+        @active="active(index)"   
         />
         </li>
 
       </ol>
-
 
   </div>
 </template>
@@ -30,26 +29,26 @@ export default {
     return{
       name: 'Home',
       //byt från c till C
-      Cards: this.$root.cardArray,
-      //chosenCard: 0,
+      //Cards: this.$root.cardArray,
+      position: 0,
     }
   },
   components: {
     CardComponent,
   },
   methods: {
-      actived(index){
+      active(index){
         this.position = index;
-        console.log(this.position)
-        return this.Cards[this.position]
+        //console.log(this.position)
+        //return this.Cards[this.position]
       }
       
     },
 
   computed: {
-    testCard(){
-      console.log(this.Cards[this.position]) //undefined
-      return this.Cards[this.position]
+    cards(){
+      console.log("Test card is: ", this.$root.cardArray) //undefined
+      return this.$root.cardArray
     }
   }
 
