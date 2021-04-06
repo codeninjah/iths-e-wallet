@@ -36,28 +36,6 @@ export default {
     }},
     props: ['card', 'index'],
     
-    /*
-    methods: {
-
-        //HADE TÄNKT BYGGA PÅ FÖR ATT SWISHA KORT VID KNAPPTRYCK PÅ RESP. KORT
-        testar(index){
-            console.log("ALEX")
-            console.log(index)
-
-            //CHANGES BG COLOR ON FIRST IN ARRAY [0]
-            const x = document.getElementsByClassName("card-body")[this.index]
-            x.style.backgroundColor = "orange"
-            console.log("Bitcoin")
-
-            //Här måste jag tänka till
-            this.$root.activeCard = this.$root.cardArray[index]
-            //console.log(index)
-            console.log(this.$root.activeCard)
-        },
-
-    }
-    */
-
 }
 </script>
 
