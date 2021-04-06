@@ -66,4 +66,9 @@ export default {
     min-height: 300px;
     max-height: 300px;
   }
+
+  li {
+    margin-bottom: 60px;
+  }
+  
 </style>

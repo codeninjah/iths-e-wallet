@@ -3,18 +3,20 @@
     <div class="card-body" 
         v-bind:class="card.vendor" 
         v-on:click="$emit('active')">
+
         <div class="first-row">
+            <img class="chip" src="../assets/chip-dark.svg">
             <p v-if="card.vendor == 'EvilCorp'"><img src="../assets/vendor-evil.svg"></p>
             <p v-else-if="card.vendor == 'Bitcoin'"><img src="../assets/vendor-bitcoin.svg"></p>
             <p v-else-if="card.vendor == 'NinjaBank'"><img src="../assets/vendor-ninja.svg"></p>
             <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
-            <img src="../assets/chip-dark.svg">
         </div>
  
 
+        <div class="card-number">{{card.cardNr}}</div>
+        <p>CARDHOLDER NAME</p>
         <div class="card-holder">{{card.cardName}}</div>
 
-        <div class="card-number">{{card.cardNr}}</div>
         <div class="name-date">
             
             <div class="expire">{{card.month}} / {{card.year}}</div>
@@ -63,23 +65,27 @@ export default {
 <style scoped>
     .card-body {
         width: 600px;
-        line-height: 3;
+        /*line-height: 3;*/
         color: white;
         padding: 25px;
         min-height: 300px;
         max-height: 300px;        
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        Justify-content: space-between;
 
     }
 
     .active-card {
         width: 600px;
-        line-height: 3;
+        margin-bottom: 100px;
+        /*line-height: 3;*/
         color: white;
         padding: 25px;
         display: flex;
         flex-direction: row;
+        min-height: 300px;
+        max-height: 300px;
     }
 
     /*
@@ -118,9 +124,14 @@ export default {
         font-size: 26px;
     }
 
-    .first-row {
-        flex-direction: row;
+    .chip {
+        align-self: flex-start;
     }
+
+    .first-row {
+        align-self: flex-start;
+    }
+
 
 </style>
 
