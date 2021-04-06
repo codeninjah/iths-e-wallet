@@ -119,6 +119,7 @@ export default {
 <style scoped>
 
 
+
     .live-card {
         min-height: 300px;
         max-height: 300px; 
