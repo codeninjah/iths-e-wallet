@@ -6,10 +6,10 @@
 
         <div class="first-row">
             <img class="chip" src="../assets/chip-dark.svg">
-            <p v-if="card.vendor == 'EvilCorp'"><img src="../assets/vendor-evil.svg"></p>
-            <p v-else-if="card.vendor == 'Bitcoin'"><img src="../assets/vendor-bitcoin.svg"></p>
-            <p v-else-if="card.vendor == 'NinjaBank'"><img src="../assets/vendor-ninja.svg"></p>
-            <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
+                <p v-if="card.vendor == 'EvilCorp'"><img src="../assets/vendor-evil.svg"></p>
+                <p v-else-if="card.vendor == 'Bitcoin'"><img src="../assets/vendor-bitcoin.svg"></p>
+                <p v-else-if="card.vendor == 'NinjaBank'"><img src="../assets/vendor-ninja.svg"></p>
+                <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
         </div>
  
 
@@ -106,9 +106,21 @@ export default {
         align-self: flex-start;
     }
 
+    
     .first-row {
-        align-self: flex-start;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
+
+    /*
+    .logo {
+        display: flex;
+        justify-content: flex-end;
+    }
+    */
+    
+    
 
 
 </style>
