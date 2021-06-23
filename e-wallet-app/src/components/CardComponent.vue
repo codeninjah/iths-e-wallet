@@ -13,15 +13,23 @@
         </div>
  
 
-        <div class="card-number">{{card.cardNr}}</div>
-        <p>CARDHOLDER NAME</p>
-        <div class="card-holder">{{card.cardName}}</div>
+        <div class="card-number">{{card.cardNr}}</div>        
 
         <div class="name-date">
-            
-            <div class="expire">{{card.month}} / {{card.year}}</div>
+            <div class="name-date-text">
+                <div class="name">CARDHOLDER NAME</div>
+                <div class="valid">VALID THRU</div>
+            </div>
+            <div class="name-date-data">
+                <div class="card-holder">{{card.cardName}}</div>
+                <div class="expire">{{card.month}} / {{card.year}}</div>
+            </div>
         </div>
+        
+        <!--
         <div class="vendor">{{card.vendor}}</div>
+        -->
+
     </div>
 </div>
 </template>
@@ -113,14 +121,23 @@ export default {
         justify-content: space-between;
     }
 
-    /*
-    .logo {
-        display: flex;
-        justify-content: flex-end;
+    .name-date {
+        display: grid;
+        /*flex-direction: row;*/
+        /*justify-content: space-between;*/
     }
-    */
     
-    
+    .name-date-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .name-date-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
 
 </style>
