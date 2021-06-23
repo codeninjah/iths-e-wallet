@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="card-body" 
+    <section class="card-body" 
         v-bind:class="card.vendor" 
         v-on:click="$emit('active')">
 
@@ -25,12 +25,12 @@
                 <div class="expire">{{card.month}} / {{card.year}}</div>
             </div>
         </div>
-        
+
         <!--
         <div class="vendor">{{card.vendor}}</div>
         -->
 
-    </div>
+    </section>
 </div>
 </template>
 

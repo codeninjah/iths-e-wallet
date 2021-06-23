@@ -1,28 +1,27 @@
 <template>
     <div class="wrapper">
        
-            <!--
+            
              <div class="live-card">
+                 <!--
                 <p>{{ cardNr }}</p>
                 <p>{{ cardName }}</p>
                 <p>{{ month }}</p>
                 <p>{{ year }}</p>
                 <p>{{ vendor }}</p>
+                -->
+                <CardComponent card="card-body"/> 
             </div>
-            -->
+            
 
-            <!--
-            <CardComponent/>
-            -->
-
-         <CardComponent :card="card-body" /> 
+         
         
         
     <div class="form">
-        <form @submit.prevent>
+        <form class="primecard" @submit.prevent="primecard" ref="form">
             <label for="card-nr">CARD NUMBER</label>
             <br />
-            <input type="text" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX" v-model="cardNr"> 
+            <input type="text" name="kortnummer" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX" v-model="cardNr"> 
             <br />
             <br />
             <label for="name">CARDHOLDER NAME</label>
@@ -101,7 +100,7 @@ export default {
     },
 
     components: {
-        CardComponent
+        CardComponent : CardComponent,
     },
 
     methods: {
@@ -119,6 +118,11 @@ export default {
                 this.year = ''
                 this.vendor = ''
             },
+
+        primecard() {
+            this.CardComponent.color = "#FFFFFF"
+            this.CardComponent.cardNr = this.$refs.form.kortnummer.value
+        }
 
             //this.$root.cardArray.push(this.vendor)
             //$this.root hämtar data från main
