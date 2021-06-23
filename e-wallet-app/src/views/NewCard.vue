@@ -1,14 +1,23 @@
 <template>
     <div class="wrapper">
-        <div class="live-card">
+       
+            <!--
+             <div class="live-card">
+                <p>{{ cardNr }}</p>
+                <p>{{ cardName }}</p>
+                <p>{{ month }}</p>
+                <p>{{ year }}</p>
+                <p>{{ vendor }}</p>
+            </div>
+            -->
 
-            <p>{{ cardNr }}</p>
-            <p>{{ cardName }}</p>
-            <p>{{ month }}</p>
-            <p>{{ year }}</p>
-            <p>{{ vendor }}</p>
+            <!--
+            <CardComponent/>
+            -->
+
+         <CardComponent :card="card-body" /> 
         
-        </div>
+        
     <div class="form">
         <form @submit.prevent>
             <label for="card-nr">CARD NUMBER</label>
@@ -76,6 +85,9 @@
 
 
 <script>
+
+import CardComponent from "@/components/CardComponent.vue"
+
 export default {
     data(){
         return {
@@ -86,6 +98,10 @@ export default {
             year: "",
             vendor: "",
         }
+    },
+
+    components: {
+        CardComponent
     },
 
     methods: {
