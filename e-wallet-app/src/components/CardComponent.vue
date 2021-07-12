@@ -12,7 +12,6 @@
                 <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
         </div>
  
-
         <div class="card-number">{{card.cardNr}}</div>        
 
         <div class="name-date">
@@ -42,7 +41,8 @@ export default {
     data() { return {
         //vendor: "blue"
     }},
-    props: ['card', 'index'],
+
+    props: ['card', 'index']
     
 }
 </script>

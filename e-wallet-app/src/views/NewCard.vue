@@ -11,13 +11,13 @@
                 <p>{{ vendor }}</p>
             -->
 
-                <CardComponent card="card-body"/> 
-                 
+                <CardComponent :card="{ cardNr , cardName}"/> 
+
             </div>   
         
         
     <div class="form">
-        <form class="primecard" ref="form">
+        <form @submit.prevent="send">
             <label for="card-nr">CARD NUMBER</label>
             <br />
             <input type="text" name="kortnummer" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX" v-model="cardNr"> 
@@ -85,6 +85,7 @@
 <script>
 
 import CardComponent from "@/components/CardComponent.vue"
+//import CardComponent from '../components/CardComponent.vue'
 
 export default {
 
@@ -124,10 +125,12 @@ export default {
 
             
 
+        /*
         primecard() {
             this.CardComponent.color = "#000000"
             this.CardComponent.cardNr = this.$refs.form.kortnummer.value
             },
+        */
 
 
             //this.$root.cardArray.push(this.vendor)
@@ -138,7 +141,6 @@ export default {
     updated() {
         console.log("Updated")
         console.log(this.cardNr)
-        this.CardComponent.this.cardNr = 122918722488472
     },
 }
 

@@ -13,7 +13,6 @@ new Vue({
       
     }
   },
-  methods: [],
 
   router,
   render: h => h(App)
