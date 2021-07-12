@@ -9,16 +9,15 @@
                 <p>{{ month }}</p>
                 <p>{{ year }}</p>
                 <p>{{ vendor }}</p>
-                -->
-                <CardComponent card="card-body"/> 
-            </div>
-            
+            -->
 
-         
+                <CardComponent card="card-body"/> 
+                 
+            </div>   
         
         
     <div class="form">
-        <form class="primecard" @submit.prevent="primecard" ref="form">
+        <form class="primecard" ref="form">
             <label for="card-nr">CARD NUMBER</label>
             <br />
             <input type="text" name="kortnummer" id="card-nr" maxlength="10" placeholder="XXXX XXXX XXXX XXXX" v-model="cardNr"> 
@@ -88,6 +87,7 @@
 import CardComponent from "@/components/CardComponent.vue"
 
 export default {
+
     data(){
         return {
             //userinput: "Alex",
@@ -117,27 +117,35 @@ export default {
                 this.month = ''
                 this.year = ''
                 this.vendor = ''
+
+                console.log("TEST")
+                //console.log($route.params.slug)
             },
 
+            
+
         primecard() {
-            this.CardComponent.color = "#FFFFFF"
+            this.CardComponent.color = "#000000"
             this.CardComponent.cardNr = this.$refs.form.kortnummer.value
-        }
+            },
+
 
             //this.$root.cardArray.push(this.vendor)
             //$this.root hämtar data från main
             //console.log(this.$root.cardArray)
-    }
+    },
+
+    updated() {
+        console.log("Updated")
+        console.log(this.cardNr)
+        this.CardComponent.this.cardNr = 122918722488472
+    },
 }
-
-
 
 </script>
 
 
-
 <style scoped>
-
 
 
     .live-card {
