@@ -12,7 +12,7 @@
                 <p v-else-if="card.vendor == 'Blockchain'"><img src="../assets/vendor-blockchain.svg"></p>
         </div>
  
-        <div class="card-number">{{card.cardNr}}</div>        
+        <div class="card-number">{{reformNumber}}</div>        
 
         <div class="name-date">
             <div class="name-date-text">
@@ -42,9 +42,26 @@ export default {
         //vendor: "blue"
     }},
 
-    props: ['card', 'index']
-    
+    props: ['card', 'index'],
+
+    computed: {
+    reformNumber() {
+      let reformNumber = "";
+      if (this.card.cardNr) {
+        for (let i = 0; i < this.card.cardNr.length; i++) {
+          if (i % 4 === 0) {
+            reformNumber = reformNumber + " " + this.card.cardNr[i];
+          } else {
+            reformNumber += this.card.cardNr[i];
+          }
+        }
+      }
+      return reformNumber;
+    },
+  },
 }
+
+
 </script>
 
 

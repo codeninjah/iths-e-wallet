@@ -11,7 +11,7 @@
                 <p>{{ vendor }}</p>
             -->
 
-                <CardComponent :card="{ cardNr , cardName}"/> 
+                <CardComponent :card="{ cardNr , cardName, month, year, vendor}"/> 
 
             </div>   
         
